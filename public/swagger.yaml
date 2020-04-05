@@ -1,0 +1,54 @@
+swagger: '2.0'
+info:
+  description: Naya.Studio API
+  version: 0.1.1
+  title: Naya.Studio API
+  contact:
+    email: taowang115@gmail.com
+basePath: /api
+tags:
+  - name: users
+    description: users
+schemes:
+  - http
+paths:
+  /signup:
+    post:
+      tags:
+        - users
+      summary: Create new user
+      description: Create a new user
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+      - in: body
+        name: user
+        description: New user
+        required: true
+        schema:
+          $ref: '#/definitions/user'
+      responses:
+        201:
+          description: user created
+          schema:
+            $ref: '#/definitions/user'
+        400:
+          description: Validation exception
+definitions:
+  user:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      registerAs:
+        type: string
+      capacity:
+        type: number
+      material:
+        type: string
+      location:
+        type: string

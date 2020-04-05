@@ -1,0 +1,71 @@
+{
+  "name": "naya.studio-backend",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codingmaven/naya.studio-backend.git"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "forever --minUptime 1000 --spinSleepTime 1000 index.js",
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "NODE_ENV=test nyc ./node_modules/.bin/mocha --timeout 20000 --recursive --exit ./test",
+    "precommit": "npm run lint"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.10.0",
+    "eslint-plugin-ava": "^4.2.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-unicorn": "^2.1.2",
+    "husky": "^0.14.3",
+    "mocha": "^4.1.0",
+    "mockgoose": "^6.0.8",
+    "nodemon": "^1.17.3",
+    "nyc": "^11.4.1",
+    "supertest": "^3.0.0",
+    "supertest-as-promised": "^4.0.2",
+    "surge": "^0.19.0"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^4.0.1",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "debug": "^3.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "express-promise-router": "^2.0.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.16",
+    "mongoose": "^5.5.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 0,
+    "statements": 0,
+    "functions": 0,
+    "branches": 0,
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "exclude": [
+      "public",
+      "test",
+      "coverage",
+      "index.js"
+    ],
+    "cache": true,
+    "all": true,
+    "report-dir": "./coverage"
+  }
+}
