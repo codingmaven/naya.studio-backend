@@ -44,7 +44,7 @@
     "express-promise-router": "^2.0.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "moment-timezone": "^0.5.16",
+    "moment-timezone": "^0.5.35",
     "mongoose": "^5.5.0"
   },
   "nyc": {
